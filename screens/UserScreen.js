@@ -11,10 +11,6 @@ const UserScreen = ({ navigation }) => {
 			<Text style={styles.text}>
 				This is the <Text style={styles.highlight}>User</Text> Screen!
 			</Text>
-			<Button
-				title="Open Drawer"
-				onPress={openDrawerHandler}
-			/>
 		</View>
 	);
 };
