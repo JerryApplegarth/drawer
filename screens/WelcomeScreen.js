@@ -1,13 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import Colors from "../constants/Colors";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
+	function openDrawerHandler() {
+		// Open the drawer
+		navigation.toggleDrawer();
+	}
 	return (
 		<View style={styles.rootContainer}>
-			<Text>
+			<Text style={styles.text}>
 				This is the <Text style={styles.highlight}>Welcome</Text>{" "}
 				Screen!
 			</Text>
+			<Button
+				title="Open Drawer"
+				onPress={openDrawerHandler}
+			/>
 		</View>
 	);
 };
@@ -20,7 +28,11 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 	},
+	text: {
+		fontSize: 24,
+		fontWeight: "bold",
+	},
 	highlight: {
-		color: Colors.red,
+		color: Colors.primary,
 	},
 });
